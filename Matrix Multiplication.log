@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.10)  15 MAY 2025 14:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.10)  15 MAY 2025 15:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/New folder (2)/Suffering/Summer 2025/MAE101/New folder/Matrix Multiplcation.tex"
-(d:/New folder (2)/Suffering/Summer 2025/MAE101/New folder/Matrix Multiplcation.tex
+**"d:/New folder (2)/Suffering/Summer 2025/MAE101/New folder/Matrix Multiplication.tex"
+(d:/New folder (2)/Suffering/Summer 2025/MAE101/New folder/Matrix Multiplication.tex
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
 (C:\Users\TGDD-MSI\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -399,9 +399,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count297
 \l__pdf_internal_box=\box54
-)
-No file "Matrix Multiplcation".aux.
-\openout1 = `"Matrix Multiplcation.aux"'.
+) (Matrix Multiplication.aux)
+\openout1 = `"Matrix Multiplication.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -423,6 +422,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -458,11 +458,12 @@ LaTeX Font Info:    ... okay on input line 12.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 12.
+(Matrix Multiplication.out) (Matrix Multiplication.out)
 \@outlinefile=\write3
-\openout3 = `"Matrix Multiplcation.out"'.
+\openout3 = `"Matrix Multiplication.out"'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
-(C:\Users\TGDD-MSI\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Users\TGDD-MSI\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
@@ -474,31 +475,24 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/TGDD-MSI/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
-[2] (Matrix Multiplcation.aux)
+[2] (Matrix Multiplication.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
-
-
-Package rerunfilecheck Warning: File `"Matrix Multiplcation".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"Matrix Multiplcation".out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `"Matrix Multiplication".out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9683 strings out of 473577
- 149152 string characters out of 5714877
- 554742 words of memory out of 5000000
- 32760 multiletter control sequences out of 15000+600000
+ 9691 strings out of 473577
+ 149566 string characters out of 5714877
+ 554823 words of memory out of 5000000
+ 32762 multiletter control sequences out of 15000+600000
  571504 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,79p,344b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,7n,79p,345b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\TGDD-MSI\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnbx12.pfb><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr12.pfb><C:/Users/TGDD-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnr17.pfb>
-Output written on "Matrix Multiplcation.pdf" (2 pages, 108134 bytes).
+Output written on "Matrix Multiplication.pdf" (2 pages, 108161 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  8 named destinations out of 1000 (max. 500000)
