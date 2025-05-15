@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, margin=2.5cm}
+\title{Giải thích phép nhân ma trận}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Phép nhân ma trận là gì?}
+
+Phép nhân ma trận là một phép toán cơ bản trong đại số tuyến tính, được sử dụng rộng rãi trong toán học, vật lý, kỹ thuật, khoa học máy tính (đặc biệt là đồ họa và học máy), v.v.
+
+Để nhân hai ma trận $A$ và $B$:
+
+\begin{itemize}
+    \item Ma trận $A$ có kích thước $m \times n$
+    \item Ma trận $B$ có kích thước $n \times p$
+\end{itemize}
+
+Kết quả sẽ là một ma trận $C$ có kích thước $m \times p$.
+
+\section*{Nhân ma trận như thế nào?}
+
+Để tính phần tử $C(i, j)$ trong ma trận kết quả:
+
+\[
+C(i, j) = \sum_{k=1}^{n} A(i, k) \cdot B(k, j)
+\]
+
+Tức là mỗi phần tử trong ma trận kết quả là tích vô hướng giữa một hàng của $A$ và một cột của $B$.
+
+\section*{Ví dụ}
+
+Cho hai ma trận:
+
+\[
+A = \begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{bmatrix} \quad (2 \times 3)
+\]
+
+\[
+B = \begin{bmatrix}
+7 & 8 \\
+9 & 10 \\
+11 & 12
+\end{bmatrix} \quad (3 \times 2)
+\]
+
+Kết quả phép nhân $C = A \times B$ là:
+
+\[
+C = \begin{bmatrix}
+1 \cdot 7 + 2 \cdot 9 + 3 \cdot 11 & 1 \cdot 8 + 2 \cdot 10 + 3 \cdot 12 \\
+4 \cdot 7 + 5 \cdot 9 + 6 \cdot 11 & 4 \cdot 8 + 5 \cdot 10 + 6 \cdot 12
+\end{bmatrix}
+=
+\begin{bmatrix}
+58 & 64 \\
+139 & 154
+\end{bmatrix}
+\]
+
+\section*{Những điều cần lưu ý}
+
+\begin{itemize}
+    \item Phép nhân ma trận \textbf{không giao hoán}:
+    \[
+    A \times B \neq B \times A
+    \]
+    \item Phép nhân ma trận \textbf{có tính kết hợp}:
+    \[
+    (A \times B) \times C = A \times (B \times C)
+    \]
+    \item Phép nhân ma trận \textbf{có tính phân phối} với phép cộng:
+    \[
+    A \times (B + C) = A \times B + A \times C
+    \]
+\end{itemize}
+
+\section*{Ứng dụng của phép nhân ma trận}
+
+\begin{itemize}
+    \item Giải hệ phương trình tuyến tính
+    \item Đồ họa máy tính (biến đổi, chiếu hình)
+    \item Học máy (mạng nơ-ron, biến đổi dữ liệu)
+    \item Cơ học lượng tử
+    \item Hệ thống điều khiển và xử lý tín hiệu
+\end{itemize}
+
+\href{https://tratoa.github.io/a/a.html}{a}
+
+\end{document}
