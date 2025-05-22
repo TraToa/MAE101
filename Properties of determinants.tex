@@ -1,0 +1,102 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage[T5]{fontenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{\textbf{Tính chất của định thức và ví dụ minh hoạ}}
+\author{}
+\date{}
+
+\begin{document}
+    \maketitle
+
+    \section*{1. Tính chất của định thức}
+    \begin{enumerate}
+        \item Định thức của ma trận tam giác (trên hoặc dưới) bằng tích các phần tử trên đường chéo chính.
+        \item Định thức của ma trận chuyển vị bằng định thức của ma trận ban đầu: 
+        \[
+        \operatorname{det}(A^T) = \operatorname{det}(A)
+        \]
+        \item Nếu một hàng hoặc một cột của ma trận toàn số 0 thì định thức bằng 0.
+        \item Nếu hai hàng hoặc hai cột của ma trận giống nhau thì định thức bằng 0.
+        \item Hoán đổi hai hàng (hoặc hai cột) thì định thức đổi dấu.
+        \item Nhân một hàng (hoặc một cột) với một số vô hướng \( k \) thì định thức bị nhân với \( k \).
+        \item Nếu nhân toàn bộ ma trận \( A \) cấp \( n \) với \( k \) thì: 
+        \[
+        \operatorname{det}(kA) = k^n \cdot \operatorname{det}(A)
+        \]
+        \item Cộng bội của một hàng vào hàng khác thì định thức không đổi.
+        \item Định thức của ma trận đơn vị là 1.
+        \item Ma trận khả nghịch khi và chỉ khi định thức khác 0.
+        \item Định thức của tích hai ma trận bằng tích các định thức:
+        \[
+        \operatorname{det}(AB) = \operatorname{det}(A) \cdot \operatorname{det}(B)
+        \]
+        \item Định thức của ma trận nghịch đảo:
+        \[
+        \operatorname{det}(A^{-1}) = \dfrac{1}{\operatorname{det}(A)}
+        \]
+        \item Nếu thay đổi thứ tự các cột hoặc hàng theo một hoán vị lẻ thì định thức đổi dấu.
+        \item Định thức của ma trận có hai hàng tỉ lệ (song song) bằng 0.
+        \item Nếu ma trận có một hàng là tổ hợp tuyến tính của các hàng còn lại thì định thức bằng 0.
+        \item Định thức tuyến tính theo từng hàng (hoặc từng cột).
+    \end{enumerate}
+
+    \section*{2. Ví dụ minh hoạ}
+    Cho:
+    \[
+    \operatorname{det} \begin{bmatrix}
+        a & b & c \\
+        p & q & r \\
+        x & y & z
+    \end{bmatrix} = 3
+    \]
+
+    Tính:
+    \[
+    \operatorname{det} \begin{bmatrix}
+        a + 2x & b + 2y & c + 2z \\
+        3a - p & 3b - q & 3c - r \\
+        a & b & c
+    \end{bmatrix}
+    \]
+
+    \subsection*{Lời giải:}
+
+    Áp dụng các phép biến đổi sơ cấp dòng (không làm thay đổi hoặc thay đổi có kiểm soát định thức):
+
+    \begin{align*}
+        R_1 &\leftarrow R_1 - 2R_3 \quad \text{(định thức không đổi)} \\
+        R_2 &\leftarrow R_2 - 3R_3 \quad \text{(định thức không đổi)} \\
+        R_1 &\leftarrow -R_1,\quad R_2 \leftarrow -R_2 \quad \text{(đổi dấu 2 lần → định thức giữ nguyên)} \\
+        \Rightarrow \text{Ma trận trở thành: } &
+        \begin{bmatrix}
+            a - 2x & b - 2y & c - 2z \\
+            p & q & r \\
+            a & b & c
+        \end{bmatrix} \\
+        R_3 &\leftarrow R_3 - R_1 \Rightarrow
+        \begin{bmatrix}
+            a - 2x & b - 2y & c - 2z \\
+            p & q & r \\
+            2x & 2y & 2z
+        \end{bmatrix} \\
+        \Rightarrow \text{Tách hệ số 2 ra khỏi hàng 3: } &
+        2 \cdot \operatorname{det} \begin{bmatrix}
+            a - 2x & b - 2y & c - 2z \\
+            p & q & r \\
+            x & y & z
+        \end{bmatrix} \\
+        R_1 &\leftarrow R_1 + 2R_3 \Rightarrow
+        2 \cdot \operatorname{det} \begin{bmatrix}
+            a & b & c \\
+            p & q & r \\
+            x & y & z
+        \end{bmatrix} = 2 \cdot 3 = 6
+    \end{align*}
+
+    \textbf{Kết luận:} Giá trị định thức cần tìm là 6.
+
+\end{document}
