@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chéo hóa Ma trận</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjs@12.3.0/lib/browser/math.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: auto; }
+    input[type='number'] { width: 60px; text-align: center; }
+    table { border-collapse: collapse; margin-top: 10px; }
+    td { padding: 5px; }
+    pre { background: #f0f0f0; padding: 10px; border-radius: 6px; white-space: pre-wrap; }
+    .matrix-input td { border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h2>🔢 Chéo hóa Ma trận</h2>
+
+  <label>Nhập kích thước ma trận vuông (n):</label>
+  <input type="number" id="matrixSize" min="1" max="10" value="2" />
+  <button onclick="generateMatrix()">Tạo ma trận</button>
+
+  <div id="matrixArea"></div>
+  <div id="calcButtonArea" style="margin-top: 10px;"></div>
+  <div id="output" style="margin-top: 20px;"></div>
+
+  <script>
+    function generateMatrix() {
+      const n = parseInt(document.getElementById('matrixSize').value);
+      const area = document.getElementById('matrixArea');
+      const buttonArea = document.getElementById('calcButtonArea');
+      area.innerHTML = '';
+      buttonArea.innerHTML = '';
+      if (isNaN(n) || n <= 0) return;
+
+      const table = document.createElement('table');
+      table.className = 'matrix-input';
+
+      for (let i = 0; i < n; i++) {
+        const row = document.createElement('tr');
+        for (let j = 0; j < n; j++) {
+          const cell = document.createElement('td');
+          const input = document.createElement('input');
+          input.type = 'number';
+          input.step = 'any';
+          input.id = `cell-${i}-${j}`;
+          input.value = (i === j) ? 1 : 0;
+          cell.appendChild(input);
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+      }
+
+      area.appendChild(document.createElement('p')).textContent = `Nhập phần tử ma trận ${n}×${n}:`;
+      area.appendChild(table);
+
+      const btn = document.createElement('button');
+      btn.textContent = 'Tính toán';
+      btn.onclick = () => diagonalize(n);
+      buttonArea.appendChild(btn);
+    }
+
+    function diagonalize(n) {
+      const output = document.getElementById('output');
+      output.innerHTML = '';
+      try {
+        const A = [];
+        for (let i = 0; i < n; i++) {
+          const row = [];
+          for (let j = 0; j < n; j++) {
+            const value = parseFloat(document.getElementById(`cell-${i}-${j}`).value);
+            if (isNaN(value)) throw new Error(`Ô (${i + 1}, ${j + 1}) không hợp lệ.`);
+            row.push(value);
+          }
+          A.push(row);
+        }
+
+        const matrix = math.matrix(A);
+        const eigen = math.eigs(matrix);
+
+        // Tạo ma trận chéo D thủ công
+        const D = [];
+        for (let i = 0; i < n; i++) {
+          const row = new Array(n).fill(0);
+          row[i] = eigen.values[i];
+          D.push(row);
+        }
+
+        // Vector riêng: các cột trong eigen.eigenvectors
+        const P = math.transpose(math.matrix(eigen.eigenvectors));
+        const detP = math.det(P);
+        const invertible = Math.abs(detP) > 1e-8;
+        const Pinv = invertible ? math.inv(P) : 'Không khả nghịch';
+
+        output.innerHTML += `<h3>Giá trị riêng:</h3><pre>${JSON.stringify(eigen.values)}</pre>`;
+        output.innerHTML += `<h3>Vector riêng (cột):</h3><pre>${JSON.stringify(eigen.eigenvectors, null, 2)}</pre>`;
+        output.innerHTML += `<h3>Ma trận D (chéo):</h3><pre>${JSON.stringify(D, null, 2)}</pre>`;
+        output.innerHTML += `<h3>Ma trận P (vector riêng xếp hàng):</h3><pre>${JSON.stringify(P._data, null, 2)}</pre>`;
+        output.innerHTML += `<h3>Ma trận P⁻¹:</h3><pre>${typeof Pinv === 'string' ? Pinv : JSON.stringify(Pinv._data, null, 2)}</pre>`;
+        output.innerHTML += `<h3>Có chéo hóa được không?</h3><pre>${invertible ? '✔️ Có' : '❌ Không'}</pre>`;
+      } catch (err) {
+        output.innerHTML = `<p style="color:red;"><strong>Lỗi:</strong> ${err.message}</p>`;
+      }
+    }
+
+    window.onload = generateMatrix;
+  </script>
+</body>
+</html>
