@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{Giá trị riêng}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Cho ma trận}
+\[
+A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}
+\]
+
+\section*{2. Tìm giá trị riêng}
+
+Giải phương trình đặc trưng:
+\[
+\det(A - \lambda I) = 0
+\Rightarrow
+\begin{vmatrix}
+2 - \lambda & 1 \\
+1 & 2 - \lambda
+\end{vmatrix} = (2 - \lambda)^2 - 1 = \lambda^2 - 4\lambda + 3 = 0
+\]
+
+Nghiệm:
+\[
+\lambda_1 = 1, \quad \lambda_2 = 3
+\]
+
+\section*{3. Tìm vector riêng}
+
+\subsection*{Với \( \lambda = 1 \):}
+\[
+(A - I)\vec{v} = 0 \Rightarrow
+\begin{bmatrix}
+1 & 1 \\
+1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+= \begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+\Rightarrow x + y = 0 \Rightarrow \vec{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\]
+
+\subsection*{Với \( \lambda = 3 \):}
+\[
+(A - 3I)\vec{v} = 0 \Rightarrow
+\begin{bmatrix}
+-1 & 1 \\
+1 & -1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+= \begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+\Rightarrow x - y = 0 \Rightarrow \vec{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\]
+
+\section*{4. Lập ma trận \( P \) và \( D \)}
+
+Ma trận vector riêng:
+\[
+P = \begin{bmatrix}
+1 & 1 \\
+-1 & 1
+\end{bmatrix}
+\]
+
+Ma trận đường chéo:
+\[
+D = \begin{bmatrix}
+1 & 0 \\
+0 & 3
+\end{bmatrix}
+\]
+
+\section*{5. Kết luận}
+
+Ma trận \( A \) được chéo hóa thành:
+\[
+A = P D P^{-1}
+\quad \text{hoặc} \quad
+D = P^{-1} A P
+\]
+
+\href{https://tratoa.github.io/MAE101/Eigenvalues.html}{a}
+\end{document}
