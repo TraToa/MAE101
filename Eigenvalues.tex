@@ -1,10 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{vietnam}
-\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
 \usepackage{hyperref}
-\usepackage[margin=2.5cm]{geometry}
+\geometry{a4paper, margin=2.5cm}
 
-\title{Giá trị riêng}
+\title{Giá trị riêng, vector riêng và chéo hóa ma trận}
 \author{}
 \date{}
 
@@ -12,92 +13,110 @@
 
 \maketitle
 
-\section*{1. Cho ma trận}
+\section*{1. Giá trị riêng và vector riêng}
+
+Cho một ma trận vuông \( A \in \mathbb{R}^{n \times n} \). Một số thực (hoặc phức) \( \lambda \) được gọi là \textbf{giá trị riêng} (eigenvalue) của \( A \) nếu tồn tại vector không-zero \( \vec{v} \in \mathbb{R}^n \) sao cho:
 \[
-A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}
+A\vec{v} = \lambda \vec{v}
 \]
+Vector \( \vec{v} \) được gọi là \textbf{vector riêng} (eigenvector) tương ứng với giá trị riêng \( \lambda \).
 
-\section*{2. Tìm giá trị riêng}
+\subsection*{Tìm giá trị riêng}
 
-Giải phương trình đặc trưng:
+Để tìm giá trị riêng, giải phương trình:
 \[
 \det(A - \lambda I) = 0
-\Rightarrow
-\begin{vmatrix}
-2 - \lambda & 1 \\
-1 & 2 - \lambda
-\end{vmatrix} = (2 - \lambda)^2 - 1 = \lambda^2 - 4\lambda + 3 = 0
+\]
+Đây được gọi là phương trình đặc trưng (characteristic equation) của ma trận \( A \).
+
+\subsection*{Tìm vector riêng}
+
+Sau khi tìm được các giá trị riêng \( \lambda \), thay vào:
+\[
+(A - \lambda I)\vec{v} = \vec{0}
+\]
+và giải hệ để tìm vector \( \vec{v} \neq \vec{0} \).
+
+\section*{2. Chéo hóa ma trận}
+
+Một ma trận \( A \in \mathbb{R}^{n \times n} \) được gọi là \textbf{chéo hóa được} nếu tồn tại ma trận khả nghịch \( P \) sao cho:
+\[
+A = PDP^{-1}
+\]
+trong đó \( D \) là ma trận đường chéo chứa các giá trị riêng của \( A \), và các cột của \( P \) là các vector riêng tương ứng.
+
+\textbf{Điều kiện chéo hóa:} Ma trận \( A \) chéo hóa được khi và chỉ khi nó có đủ \( n \) vector riêng tuyến tính độc lập.
+
+\section*{3. Ví dụ minh họa}
+
+Cho ma trận:
+\[
+A = \begin{bmatrix}
+4 & 1 \\
+2 & 3
+\end{bmatrix}
 \]
 
-Nghiệm:
+\subsection*{Bước 1: Tìm giá trị riêng}
+
+Tìm nghiệm của phương trình:
 \[
-\lambda_1 = 1, \quad \lambda_2 = 3
+\det(A - \lambda I) = 0
+\Rightarrow \det \begin{bmatrix}
+4 - \lambda & 1 \\
+2 & 3 - \lambda
+\end{bmatrix} = 0
+\]
+\[
+(4 - \lambda)(3 - \lambda) - 2 = \lambda^2 - 7\lambda + 10 = 0
+\Rightarrow \lambda_1 = 5,\quad \lambda_2 = 2
 \]
 
-\section*{3. Tìm vector riêng}
+\subsection*{Bước 2: Tìm vector riêng}
 
-\subsection*{Với \( \lambda = 1 \):}
+\underline{Với \( \lambda = 5 \)}:
 \[
-(A - I)\vec{v} = 0 \Rightarrow
-\begin{bmatrix}
-1 & 1 \\
-1 & 1
-\end{bmatrix}
-\begin{bmatrix}
-x \\
-y
-\end{bmatrix}
-= \begin{bmatrix}
-0 \\
-0
-\end{bmatrix}
-\Rightarrow x + y = 0 \Rightarrow \vec{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
-\]
-
-\subsection*{Với \( \lambda = 3 \):}
-\[
-(A - 3I)\vec{v} = 0 \Rightarrow
+(A - 5I)\vec{v} = 0 \Rightarrow 
 \begin{bmatrix}
 -1 & 1 \\
-1 & -1
+2 & -2
 \end{bmatrix}
-\begin{bmatrix}
-x \\
-y
-\end{bmatrix}
-= \begin{bmatrix}
-0 \\
-0
-\end{bmatrix}
-\Rightarrow x - y = 0 \Rightarrow \vec{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\vec{v} = 0 \Rightarrow v_1 = v_2
+\Rightarrow \vec{v}_1 = \begin{bmatrix}1 \\ 1\end{bmatrix}
 \]
 
-\section*{4. Lập ma trận \( P \) và \( D \)}
+\underline{Với \( \lambda = 2 \)}:
+\[
+(A - 2I)\vec{v} = 0 \Rightarrow 
+\begin{bmatrix}
+2 & 1 \\
+2 & 1
+\end{bmatrix}
+\vec{v} = 0 \Rightarrow 2v_1 + v_2 = 0 \Rightarrow v_2 = -2v_1
+\Rightarrow \vec{v}_2 = \begin{bmatrix}1 \\ -2\end{bmatrix}
+\]
 
-Ma trận vector riêng:
+\subsection*{Bước 3: Chéo hóa}
+
+Tạo ma trận:
 \[
 P = \begin{bmatrix}
 1 & 1 \\
--1 & 1
-\end{bmatrix}
-\]
-
-Ma trận đường chéo:
-\[
+1 & -2
+\end{bmatrix}, \quad 
 D = \begin{bmatrix}
-1 & 0 \\
-0 & 3
+5 & 0 \\
+0 & 2
 \end{bmatrix}
+\Rightarrow A = PDP^{-1}
 \]
 
-\section*{5. Kết luận}
+\section*{4. Kết luận}
 
-Ma trận \( A \) được chéo hóa thành:
-\[
-A = P D P^{-1}
-\quad \text{hoặc} \quad
-D = P^{-1} A P
-\]
+- Giá trị riêng cho biết mức độ co giãn của không gian theo các hướng riêng.
+- Vector riêng là những hướng không đổi khi tác động bởi phép biến đổi tuyến tính \( A \).
+- Chéo hóa giúp đơn giản hóa tính toán lũy thừa ma trận và giải hệ phương trình vi phân tuyến tính.
 
-\href{https://tratoa.github.io/MAE101/Eigenvalues.html}{a}
+\href{tratoa.github.io/MAE101/Eigenvalues.html}{a}
+
 \end{document}
