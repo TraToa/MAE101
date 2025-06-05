@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath, amssymb, geometry}
+\geometry{margin=1in}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\title{Phân tích chi tiết các phép biến đổi sơ cấp và kiểm tra tính độc lập tuyến tính}
+\date{}
+\begin{document}
+\maketitle
+
+\textbf{1. Phép biến đổi sơ cấp trên dòng hoặc cột của ma trận}
+
+Phép biến đổi sơ cấp là những phép toán cơ bản thực hiện trên dòng hoặc cột của một ma trận, bao gồm:
+
+\begin{itemize}
+    \item Đổi chỗ hai dòng (hoặc hai cột) với nhau.
+    \item Nhân một dòng (hoặc một cột) với một số khác 0.
+    \item Cộng (hoặc trừ) một bội của một dòng (hoặc cột) này vào dòng (hoặc cột) khác.
+\end{itemize}
+
+Ví dụ:
+
+\[
+A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
+\]
+
+Thực hiện các phép biến đổi sơ cấp:
+
+\begin{align*}
+\text{Nhân dòng 1 với 2:} &\quad \begin{bmatrix} 2 & 4 \\ 3 & 4 \end{bmatrix} \\
+\text{Dòng 2 trừ 3 lần dòng 1:} &\quad \begin{bmatrix} 1 & 2 \\ 0 & -2 \end{bmatrix}
+\end{align*}
+
+\vspace{1em}
+\textbf{2. Phép khử Gauss và khử Gauss–Jordan}
+
+\begin{itemize}
+    \item \textbf{Phép khử Gauss} nhằm đưa ma trận về \textit{dạng bậc thang} (row echelon form - REF).
+    \item \textbf{Phép khử Gauss–Jordan} nhằm đưa ma trận về \textit{dạng bậc thang rút gọn} (reduced row echelon form - RREF), nơi các phần tử chính là 1 và cả trên lẫn dưới đều là 0.
+\end{itemize}
+
+Ví dụ:
+
+\[
+A = \begin{bmatrix} 1 & 2 & -1 \\ 2 & 4 & 1 \\ -1 & -2 & 5 \end{bmatrix}
+\]
+
+Sau khử Gauss:
+
+\[
+\begin{bmatrix} 1 & 2 & -1 \\ 0 & 0 & 3 \\ 0 & 0 & 0 \end{bmatrix}
+\]
+
+Sau khử Gauss–Jordan:
+
+\[
+\begin{bmatrix} 1 & 2 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}
+\]
+
+\vspace{1em}
+\textbf{3. Hạng của ma trận}
+
+Sau khi biến đổi về dạng bậc thang, \textbf{số dòng khác 0} của ma trận chính là \textit{hạng} (rank) của ma trận đó.
+
+Ví dụ:
+
+\[
+B = \begin{bmatrix} 1 & 2 & 3 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{bmatrix}
+\Rightarrow \operatorname{rank}(B) = 2
+\]
+
+\vspace{1em}
+\textbf{4. Kiểm tra tính độc lập tuyến tính của hệ vectơ}
+
+Gọi \( \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \in \mathbb{R}^n \). Ta xét ba trường hợp:
+
+\textbf{Trường hợp 1: \( k = n \)}
+
+Lập định thức của ma trận có các vectơ là cột. Nếu:
+
+\[
+\det \neq 0 \Rightarrow \text{hệ độc lập tuyến tính}, \quad \det = 0 \Rightarrow \text{hệ phụ thuộc tuyến tính}
+\]
+
+Ví dụ:
+
+\[
+\vec{v}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},\ 
+\vec{v}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},\ 
+\vec{v}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+\]
+
+\[
+\det\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} = 1 \Rightarrow \text{độc lập tuyến tính}
+\]
+
+\textbf{Trường hợp 2: \( k > n \)}
+
+Trong không gian \( \mathbb{R}^n \), không thể có quá \( n \) vectơ độc lập tuyến tính. Do đó:
+
+\[
+k > n \Rightarrow \text{hệ phụ thuộc tuyến tính}
+\]
+
+Ví dụ: 4 vectơ trong \( \mathbb{R}^3 \) chắc chắn phụ thuộc tuyến tính.
+
+\textbf{Trường hợp 3: \( k < n \)}
+
+Lập ma trận có các vectơ là cột. Gọi \( r \) là hạng của ma trận.
+
+\[
+\begin{cases}
+r = k & \Rightarrow \text{hệ độc lập tuyến tính} \\
+r < k & \Rightarrow \text{hệ phụ thuộc tuyến tính}
+\end{cases}
+\]
+
+Ví dụ:
+
+\[
+\vec{v}_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix},\ 
+\vec{v}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \\ 1 \end{bmatrix}
+\Rightarrow 
+A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 0 \\ 0 & 1 \end{bmatrix}
+\]
+
+Hạng của \( A \) là 2 = số vectơ → hệ độc lập tuyến tính.
+
+\end{document}
