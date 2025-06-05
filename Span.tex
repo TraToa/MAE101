@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath, amssymb, geometry}
+\geometry{margin=1in}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\title{Tổ hợp tuyến tính, Phụ thuộc tuyến tính, Span và Cơ sở}
+\date{}
+\begin{document}
+\maketitle
+
+\textbf{1. Phụ thuộc tuyến tính}
+
+Một tập các vectơ \( \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \) được gọi là \textit{phụ thuộc tuyến tính} nếu tồn tại các hệ số \( \lambda_1, \lambda_2, \ldots, \lambda_k \), không đồng thời bằng 0, sao cho:
+\[
+\lambda_1 \vec{v}_1 + \lambda_2 \vec{v}_2 + \cdots + \lambda_k \vec{v}_k = \vec{0}
+\]
+
+\textbf{Ví dụ:}
+
+\[
+\vec{v}_1 = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \vec{v}_2 = \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix} \Rightarrow \vec{v}_2 = 2\vec{v}_1
+\Rightarrow \text{phụ thuộc tuyến tính}
+\]
+
+\textbf{2. Tổ hợp tuyến tính}
+
+Tổ hợp tuyến tính của các vectơ \( \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \) là biểu thức dạng:
+\[
+\lambda_1 \vec{v}_1 + \lambda_2 \vec{v}_2 + \cdots + \lambda_k \vec{v}_k, \quad \lambda_i \in \mathbb{R}
+\]
+
+\textbf{Ví dụ:}
+
+\[
+3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} - 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+\]
+
+\textbf{3. Span (Không gian con sinh bởi một hệ vectơ)}
+
+\[
+\operatorname{span}(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k) = \left\{ \sum_{i=1}^k \lambda_i \vec{v}_i \mid \lambda_i \in \mathbb{R} \right\}
+\]
+
+\textbf{Ví dụ:}
+
+\[
+\vec{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix},\ 
+\vec{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix} \Rightarrow \operatorname{span}(\vec{v}_1, \vec{v}_2) = \mathbb{R}^2
+\]
+
+\textbf{4. Cơ sở của một không gian}
+
+Một tập hợp các vectơ là một \textit{cơ sở} của không gian nếu:
+\begin{itemize}
+    \item Các vectơ \textbf{độc lập tuyến tính}.
+    \item Tập đó \textbf{sinh ra toàn bộ không gian} (span).
+\end{itemize}
+
+\textbf{Ví dụ:}
+
+Trong \( \mathbb{R}^3 \), tập:
+\[
+\left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},\ 
+\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},\ 
+\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\}
+\]
+là cơ sở chuẩn của \( \mathbb{R}^3 \).
+
+\end{document}
